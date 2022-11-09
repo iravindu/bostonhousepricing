@@ -2,6 +2,7 @@ import pickle
 from flask import Flask, request, app, jsonify, url_for, render_template
 import numpy as np
 import pandas as pd
+import json
 
 # define flask app
 app = Flask(__name__)
@@ -19,7 +20,7 @@ def home():
 # this is post request bcz we give input. this will capture the input
 # then we wiil go and give that input to our model.
 # then our model will give the output
-@app.route('/predict_api', methods = ['POST' ]) 
+@app.route('/predict_api', methods = ['POST']) 
 def predict_api():
     # whenever I hit predict_api making sure that the input is in json format
     data = request.json['data'] 
