@@ -19,7 +19,7 @@ def home():
 # this is post request bcz we give input. this will capture the input
 # then we wiil go and give that input to our model.
 # then our model will give the output
-@app.route('/predict_api', methods = ['POST']) 
+@app.route('/predict_api', methods = ['POST' ]) 
 def predict_api():
     # whenever I hit predict_api making sure that the input is in json format
     data = request.json['data'] 
@@ -42,6 +42,6 @@ def predict():
     print(final_input)
     output = regmodel.predict(final_input)[0]
     return render_template("home.html", prediction_text = "The house price prediction is {}".format(output))
-    
+        
 if __name__ == "__main__":
     app.run(debug = True)
